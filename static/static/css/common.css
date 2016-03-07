@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+p {
+	margin: 0!important;
+}
+img {
+	border: 0;
+}
+ul, ol, li {
+    list-style: none;
+}
+body {
+    display: inline-table;
+    width: 100%;
+    font-family: Hiragino Sans GB, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    -webkit-touch-callout: inherit;
+    -webkit-user-select: auto;
+    line-height: 1.42857143;
+}
+.clear {
+    clear: both;
+    z-index: 1;
+}
