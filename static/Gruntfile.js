@@ -3,6 +3,9 @@ module.exports = function(grunt) {
     // Project configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        glb: {
+            dist: '' /*绝对路径时使用*/
+        },
         concat: {
             // 这里是concat任务的配置信息
             options: {
@@ -13,10 +16,7 @@ module.exports = function(grunt) {
                         'static/js/jquery.cookie.js',
                         'static/js/layzr.min.js',
                         'static/js/bc_ajax.js' ],
-                dest: 'dist/js/common.min.js'
-            },
-            library: {
-
+                dest: '<%= glb.dist %>dist/js/common.min.js'
             }
         },
         uglify: {
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
                         'static/js/jquery.cookie.js',
                         'static/js/layzr.min.js',
                         'static/js/bc_ajax.js' ],
-                dest: 'dist/js/common.min.js'  
+                dest: '<%= glb.dist %>dist/js/common.min.js'  
             }
         },
         cssmin: {
@@ -41,15 +41,7 @@ module.exports = function(grunt) {
                 src: [  'static/css/bootstrap.min.css',
                         'static/css/font-awesome.css',
                         'static/css/common.css' ],
-                dest: 'dist/css/common.min.css'
-            },
-            index: {
-                src: [  'static/css/index.css' ],
-                dest: 'dist/css/index.min.css'
-            },
-            home: {
-                src: [  'static/css/home.css' ],
-                dest: 'dist/css/home.min.css'
+                dest: '<%= glb.dist %>dist/css/common.min.css'
             }
         }
     });
